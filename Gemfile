@@ -44,9 +44,6 @@ group :development, :test do
 
   gem "pry"
 
-  # Model Schema Documentation
-  gem 'annotate'
-
   # API path documentation
   gem "chusaku", require: false
 end
