@@ -76,17 +76,55 @@ bundle install
 rails db:migrate
 ```
 
+------------------------------------------------------------------------------------
 
 # Starting the rails server:
 ```
 rails s
 ```
-
+------------------------------------------------------------------------------------
 
 # Update the api annotation on controllers:
 ```
 bundle exec chusaku
 ```
+------------------------------------------------------------------------------------
 
 # Steps to test endpoints locally:
-Curl
+
+1. To create a short url
+```
+curl --location 'http://localhost:3000/api/v1/shorten' \
+--header 'Content-Type: application/json' \
+--data '{
+    "url": "http://www.google.com"
+}'
+```
+
+2. Batch Short url
+```
+curl --location 'http://localhost:3000/api/v1/shorten/batch' \
+--header 'Content-Type: application/json' \
+--data '{
+    "urls": ["http://www.youtube.com", "http://www.instagram.com"]
+}'
+```
+
+3. Deactivate a shortened url
+```
+curl --location --request POST 'http://localhost:3000/api/v1/deactivate/:code'
+eg: curl --location --request POST 'http://localhost:3000/api/v1/deactivate/caKmVQ'
+```
+
+4. Access the shortened url
+```
+curl --location 'http://localhost:3000/:code'
+eg: curl --location 'http://localhost:3000/99tS2d'
+```
+
+5. Analytics for shortened URLs with their click statistics
+```
+curl --location 'http://localhost:3000/api/v1/analytics?start_date=9%2F06%2F2025&end_date=10%2F06%2F2025&timezone=Europe%2FParis'
+```
+
+------------------------------------------------------------------------------------
