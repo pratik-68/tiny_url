@@ -21,10 +21,9 @@ Requirements:
 4. Analytics
 - Create an endpoint that returns shortened URLs with their click statistics
 - Accept the following filter parameters:
-
-start_date - beginning of date range
-end_date - end of date range
-timezone - timezone for the date range filtering, accepting both IANA identifiers (e.g “Europe/Paris”) and ISO 8601 offset (“+5:30”, “-08:00”, “Z”)
+      start_date - beginning of date range
+      end_date - end of date range
+      timezone - timezone for the date range filtering, accepting both IANA identifiers (e.g “Europe/Paris”) and ISO 8601 offset (“+5:30”, “-08:00”, “Z”)
 
 - The response should include:
 a. The shortened URL details
@@ -32,7 +31,7 @@ b. Total click count (all time)
 c. Click count within the specified date range (filtered by timezone)
 
 
-** Technical Guidelines **
+**Technical Guidelines**
 - Use PostgreSQL as the database
 - Focus on clear, descriptive naming throughout your code
 - No test coverage is required
@@ -41,11 +40,12 @@ c. Click count within the specified date range (filtered by timezone)
 - Design JSON responses that would be easy for a frontend developer to work with
 
 
-** Testing **
+**Testing**
+
 We'll test your API using Postman, so please ensure your endpoints work with standard HTTP requests. You don't need to create a Postman collection or any frontend, but please provide a list of endpoints and JSON payloads or query params to test with.
 
 
-** Evaluation **
+**Evaluation**
 
 Your submission will be evaluated on:
 - Code organization and readability
